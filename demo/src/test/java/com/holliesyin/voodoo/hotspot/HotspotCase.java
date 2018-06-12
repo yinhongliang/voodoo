@@ -11,17 +11,27 @@ public class HotspotCase {
 
     public HotspotCase(String id) {
         this.id = id;
-        subscriber = new ItemExtHotspotDataBusSubscriber(itemResource, id,AddItemExtPropertyEvent.class);
+        subscriber = new ItemExtHotspotDataBusSubscriber(itemResource, id, AddItemExtPropertyEvent.class);
         subscriber.subscribe(publisher);
     }
 
-    public void publishEvents(){
-        publisher.publish(new AddItemExtPropertyEvent(id,"key1","value1"));
-        publisher.publish(new AddItemExtPropertyEvent(id,"key2","value2"));
-        publisher.publish(new AddItemExtPropertyEvent(id,"key1","value3"));
+    public void publishEvents() {
+        doSomethingTimeConsuming();
+        publisher.publish(new AddItemExtPropertyEvent(id, "key1", "value1"));
+        doSomethingTimeConsuming();
+        publisher.publish(new AddItemExtPropertyEvent(id, "key2", "value2"));
+        doSomethingTimeConsuming();
+        publisher.publish(new AddItemExtPropertyEvent(id, "key1", "value3"));
     }
 
-    public void commit(){
+    public void commit() {
         subscriber.commit();
+    }
+
+    private void doSomethingTimeConsuming() {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+        }
     }
 }

@@ -27,7 +27,7 @@ public class AddItemExtPropertyHandler extends DefaultHotspotDataBusHandler {
 
     @Override
     public void initContext() {
-        item = itemResource.getItem(id);
+        item = itemResource.findById(id);
         occLock = item.getExt();
     }
 

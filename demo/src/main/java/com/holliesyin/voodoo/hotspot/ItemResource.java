@@ -9,7 +9,8 @@ import org.slf4j.LoggerFactory;
 public class ItemResource {
     private final static Logger LOG = LoggerFactory.getLogger(ItemResource.class);
 
-    public Item getItem(String id) {
+    public Item findById(String id) {
+        LOG.info("find item in db,id:{}",id);
         return new Item(id,"");
     }
 
@@ -18,8 +19,8 @@ public class ItemResource {
         return true;
     }
 
-    public boolean updateItemExt(Item item,String lock){
-        LOG.info("update item ext with lock success,item:{},lock:{}",item,lock);
+    public boolean updateItemExt(Item item,String occLock){
+        LOG.info("update item ext with occLock success,item:{},occLock:{}",item,occLock);
         return true;
     }
 }
