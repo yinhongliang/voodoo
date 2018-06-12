@@ -25,7 +25,7 @@ public class DefaultHotspotDataBusSubscriber implements HotspotDataBusSubscriber
 
     @Override
     public void addFilter(Filter filter) {
-        LOG.info("add filter,filter:{}",filter);
+        LOG.info("add filter,filter:{}",filter.getClass().getName());
         if (filters == null) {
             filters = new ArrayList<>();
         }
@@ -48,7 +48,7 @@ public class DefaultHotspotDataBusSubscriber implements HotspotDataBusSubscriber
 
     @Override
     public void addHandler(Handler handler) {
-        LOG.info("add handler,handler:{}",handler);
+        LOG.info("add handler,handler:{}",handler.getClass().getName());
         if (handlers == null) {
             handlers = new ArrayList<>();
         }

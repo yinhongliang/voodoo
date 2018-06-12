@@ -1,8 +1,6 @@
 package com.holliesyin.voodoo.hotspot;
 
 import com.google.gson.Gson;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,12 +9,12 @@ import java.util.Map;
 /**
  * Created by @author Hollies Yin on 2018-05-28.
  */
-public class AddItemExtPropertyHandler extends DefaultHandler {
+public class AddItemExtPropertyHandler extends DefaultHotspotDataBusHandler {
 
-    private final static Logger LOG = LoggerFactory.getLogger(AddItemExtPropertyHandler.class);
     private ItemResource itemResource;
     private String id;
     private boolean useOCC;
+
     private Item item;
     private Object occLock;
 

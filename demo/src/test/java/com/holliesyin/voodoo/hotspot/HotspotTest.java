@@ -8,10 +8,10 @@ public class HotspotTest {
         HotspotCase hotspotCase0 = new HotspotCase("0");
         hotspotCase0.publishEvents();
 
-        HotspotCase hotspotCase1 = new HotspotCase("1");
-        hotspotCase1.publishEvents();
+//        HotspotCase hotspotCase1 = new HotspotCase("1");
+//        hotspotCase1.publishEvents();
+//        hotspotCase1.commit();
 
         hotspotCase0.commit();
-        hotspotCase1.commit();
     }
 }

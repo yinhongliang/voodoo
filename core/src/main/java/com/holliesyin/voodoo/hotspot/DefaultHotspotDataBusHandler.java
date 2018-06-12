@@ -1,11 +1,16 @@
 package com.holliesyin.voodoo.hotspot;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 /**
  * Created by @author Hollies Yin on 2018-06-12.
  */
-public abstract class DefaultHandler implements Handler{
+public abstract class DefaultHotspotDataBusHandler implements Handler{
+
+    protected final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @Override
     public abstract void initContext();
