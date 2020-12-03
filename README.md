@@ -1,6 +1,7 @@
 # voodoo
 
 voodoo是为解决热点数据更新问题而生。
+update test.
 
 ## 基于事务的解决方案
 Thread 1<br>
